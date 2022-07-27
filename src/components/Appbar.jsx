@@ -29,7 +29,10 @@ export default function Appbar() {
                     <Typography variant='h6' component="div"
                         sx={{
                             flexGrow: 1,
-                            color: "#000000"
+                            color: "#000000",
+                            fontFamily: 'DM Sans',
+                            fontSize: '24px',
+                            fontWeight: 'bold',
 
                         }}>
                         Avax-Arbitrage
@@ -37,7 +40,7 @@ export default function Appbar() {
 
                     {/* Connect Button */}
 
-                    <Button sx={{ color: "#000000" }}>
+                    <Button sx={{ color: "#fff", backgroundColor: 'black', fontFamily: 'DM Sans' }}>
                         Connect Wallet
                     </Button>
 
