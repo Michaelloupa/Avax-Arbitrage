@@ -4,7 +4,7 @@
 
 import react from 'react';
 import Box from '@mui/material/Box';
-import { Card, Grid } from '@mui/material';
+import { Card, Grid, Stack } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { Container } from '@mui/system';
 import { CustomButton } from './Custombutton';
@@ -18,14 +18,10 @@ export default function Homepage() {
     return (
 
         // Main Container
+        <Container maxwidth='xxl' sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }} >
+            {/*Functionality page */}
 
-        <Container >
-
-            <Card sx={{ maxWidth: 555, maxHeight: 900 }}>
-
-                {/*Functionality page */}
-
-
+            <Card sx={{ mt: 2, mb: 2 }}>
                 <Box >
                     {/* Heading */}
                     <Typography
@@ -35,87 +31,81 @@ export default function Homepage() {
                             color: '#000',
                             fontSize: '40px',
                             mt: '6%',
-                            mb: "3%"
+                            mb: "3%",
+                            fontFamily: 'DM Sans'
+
                         }}>
                         Simulating Arbitrage on Avax.. 🎬
                     </Typography>
                 </Box>
 
+            </Card>
 
-                {/* STEP ONE ( AVAX REQUIREMENTS ) */}
+            <Card sx={{ padding: '20px' }}>
+                <Box>
 
-                <Box
-                    sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}>
-
-                    <Typography
+                    {/* STEP ONE ( AVAX REQUIREMENTS ) */}
+                    <Box
                         sx={{
-                            fontSize: "26px",
-                            fontWeight: "400",
-                            mr: '6%',
+                            display: 'flex',
+
                         }}>
-                        Avax Required to Arbitrage 🤑
-                    </Typography>
+                        <Typography
+                            sx={{
+                                fontSize: "32px",
+                                mr: '5%',
+                                fontFamily: 'DM Sans',
+                            }}>
+                            Avax Required to Arbitrage 🤑
+                        </Typography>
+                        {/* Avax Amount ( READ ONLY ) */}
+                        <Input InputProps={{
+                            readOnly: true,
+                        }} label="Avax required" >
+                        </Input>
+                    </Box>
 
-                    {/* Avax Amount ( READ ONLY ) */}
-
-                    <Input InputProps={{
-                        readOnly: true,
-                    }} label="Avax required" >
-
-                    </Input>
-
-                </Box>
 
 
-                {/* Amount Needed to Arbitrage */}
+                    {/* Amount Needed to Arbitrage */}
 
-                <Box
-                    sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        mt: '5%'
-                    }}>
-                    <Typography
+                    <Box
                         sx={{
-                            fontSize: "26px",
-                            fontWeight: "400",
-                            mr: '6%'
+                            display: 'flex',
+                            mt: '5%'
                         }}>
-                        Amount needed to Gain Avax 🚀
-                    </Typography>
-
-                    {/* Avax Amount ( READ ONLY ) */}
-
-
-                    <Input InputProps={{
-                        readOnly: true,
-                    }} label="Max Arbitrage Amount" >
-
-                    </Input>
+                        <Typography
+                            sx={{
+                                fontSize: "32px",
+                                mr: '5%',
+                                fontFamily: 'DM Sans',
+                            }}>
+                            Amount needed to Gain Avax 🚀
+                        </Typography>
+                        {/* Avax Amount ( READ ONLY ) */}
+                        <Input InputProps={{
+                            readOnly: true,
+                        }} label="Max Arbitrage Amount" >
+                        </Input>
+                    </Box>
 
                 </Box>
 
                 {/* STEP TWO */}
-
                 <Box
                     sx={{
                         display: 'flex',
-                        justifyContent: 'center',
+
                         mt: '6%',
                         mr: '8%'
 
                     }}>
-
-                    <Box sx={{ gridTemplateColumns: '2fr 1fr', display: "grid", gridGap: '1rem', ml: "4%" }}>
+                    <Box sx={{ gridTemplateColumns: '2fr 1fr', display: "grid", gridGap: '1rem' }}>
 
                         <Typography
                             sx={{
-                                fontWeight: '500',
-                                fontSize: '32px'
+                                fontSize: '32px',
+                                fontFamily: 'DM Sans',
                             }}>
                             Ready to try Arbitrage? 💵
                         </Typography>
@@ -125,35 +115,36 @@ export default function Homepage() {
                                 mt: '4%'
                             }}> Simulate </CustomButton>
                     </Box>
-
-
                 </Box>
 
-
-                {/* STEP THREE */}
-
+            </Card>
 
 
-                <Box sx={{ display: 'grid', gridTemplateColumns: '2fr 1 fr', gridGap: '1rem', justifyContent: "start" }}>
+            {/* STEP THREE */}
 
-                    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                        <Typography >
+
+            <Card sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', mt: 5, padding: '30px' }}>
+
+                <Box sx={{ display: 'flex', mt: 1 }}>
+                    <Stack>
+                        <Typography sx={{
+                            fontSize: '24px',
+                            fontWeight: '500',
+                            fontFamily: 'DM Sans',
+                            mb: '2%'
+                        }}>
                             Need a Flashloan? Try it out...
                         </Typography>
-                    </Box>
-
-
-                    <Input label="Flashloan Amount"
-                        sx={{
-                            display: 'flex',
-                            mb: '3%',
-
-                        }}
-                    />
-
-                    < CustomButton > Execute</CustomButton>
+                        <Input label="Flashloan Amount"
+                            sx={{
+                                mb: '3%',
+                            }}
+                        />
+                        < CustomButton> Execute</CustomButton>
+                    </Stack>
 
                 </Box>
+
 
 
                 {/* STEP FOUR */}
@@ -161,36 +152,35 @@ export default function Homepage() {
                 <Box
                     sx={{
                         display: 'flex',
-                        justifyContent: 'center',
-                        mt: '6%',
+                        mt: 1,
                     }}>
-                    <Typography >
-                        Let's Cleanup. Withdraw...💼
-                    </Typography>
+                    <Stack>
+                        <Typography sx={{
+                            fontSize: '24px',
+                            fontWeight: '500',
+                            fontFamily: 'DM Sans',
+                            mb: '2%'
+                        }} >
+                            Let's Cleanup. Withdraw...💼
+                        </Typography>
 
-                    <Box
-                        sx={{
-                            // display:'flex',
-                            justifyContent: 'center',
-                            mt: '4%'
-                        }}>
+
+
                         <Input
                             label="Withdraw Amount"
                             sx={{
 
-                                mb: '6%'
+                                mb: '3%'
                             }} />
                         <CustomButton
                             sx={{
-                                mr: '6%'
+
                             }}>Withdraw</CustomButton>
-                    </Box>
+
+                    </Stack>
 
                 </Box>
-
             </Card>
-
-
         </Container >
 
 

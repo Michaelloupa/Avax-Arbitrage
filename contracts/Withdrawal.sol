@@ -1,9 +1,9 @@
 //SPDX-License-Identifier: MIT
 
 pragma solidity >=0.6.12 <0.9.0;
-import "@openzeppelin/contracts@3.0.0/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts@3.0.0/token/ERC20/SafeERC20.sol";
-import "@openzeppelin/contracts@3.0.0/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
 This contract is used to withdraw tokens from the contract used to carry out the flash loan arbitrage.
@@ -29,12 +29,12 @@ contract Withdrawable is Ownable {
         if (_assetAddress == ETHER) {
             address _myAddress = address(this);
             assetBalance = _myAddress.balance;
-            msg.sender.transfer(assetBalance);
+            payable(msg.sender).transfer(assetBalance);
         } else {
             assetBalance = ERC20(_assetAddress).balanceOf(address(this));
             ERC20(_assetAddress).safeTransfer(msg.sender, assetBalance);
         }
 
-        emit Withdrawal(msg.sender, _assetAddress, assetBalance);
+        //emit Withdrawal(msg.sender, _assetAddress, assetBalance);
     }
 }
