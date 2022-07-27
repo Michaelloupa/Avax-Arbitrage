@@ -12,31 +12,32 @@ import Button from '@mui/material/Button';
 
 //Creating the Appbar
 
-export default function Appbar (){
+export default function Appbar() {
     return (
 
         //Appbar Container
 
         <Box sx={{
-            flexGrow:1
+            flexGrow: 1
         }}>
-            <AppBar position='static'>
+            <AppBar sx={{ backgroundColor: "#e5e5e5" }} position='static'>
 
                 <Toolbar>
 
                     {/* App Name */}
 
                     <Typography variant='h6' component="div"
-                    sx={{
-                        flexGrow:1,
-                        
-                    }}>
+                        sx={{
+                            flexGrow: 1,
+                            color: "#000000"
+
+                        }}>
                         Avax-Arbitrage
                     </Typography>
 
                     {/* Connect Button */}
 
-                    <Button color="inherit">
+                    <Button sx={{ color: "#000000" }}>
                         Connect Wallet
                     </Button>
 
