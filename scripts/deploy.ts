@@ -1,7 +1,8 @@
 const { ethers } = require("hardhat");
 
 const main = async () => {
-  const factory = await ethers.getContractFactory("Manzi");
+
+  const factory = await ethers.getContractFactory("FlashLoan.sol");
   const deployedSwapper = await factory.deploy();
 
   let data = {

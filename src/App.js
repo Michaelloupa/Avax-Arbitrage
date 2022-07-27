@@ -1,15 +1,15 @@
-import './App.css';
-import Homepage from './Homepage';
-import { Container } from '@mui/system';
-import Appbar from './Appbar';
+import './App.css'
+import Homepage from '../src/components/Homepage'
+import { Container } from '@mui/system'
+import Appbar from '../src/components/Appbar'
 
 function App() {
   return (
     <Container>
-      <Appbar/>
-      <Homepage/>
+      <Appbar />
+      <Homepage />
     </Container>
-  );
+  )
 }
 
-export default App;
+export default App
